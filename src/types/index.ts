@@ -9,6 +9,6 @@ export type {
   CatImagesFetcher,
 } from './lgtmImage';
 
-export type { CustomDataAttrGtmClick } from './gtm';
+export { CustomDataAttrGtmClick } from './gtm';
 
-export type { LinkAttribute } from './link';
+export { LinkAttribute } from './link';

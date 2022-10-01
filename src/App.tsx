@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { GitHubLoginButton } from '../dist';
+import { GitHubLoginButton, ErrorContent } from './components';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <GitHubLoginButton />
+      <ErrorContent type={404} shouldDisplayBackToTopButton={true} language="ja" catImage={<p></p>}/>
     </div>
   )
 }

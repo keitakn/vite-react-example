@@ -6,6 +6,9 @@ import dts from 'vite-plugin-dts';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), dts({insertTypesEntry: true})],
+  define: {
+    'process.env': {}
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
@@ -14,12 +17,13 @@ export default defineConfig({
       fileName: (format) => `vite-react-example.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'styled-components'],
+      external: ['react', 'react-dom', 'styled-components', 'next/link'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
           'styled-components': 'styled',
+          'next/link': 'Link',
         },
       },
     },
